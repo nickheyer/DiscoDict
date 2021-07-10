@@ -39,7 +39,10 @@ async def on_message(message):
       html  = json.loads(html)
       best_match = html[0]
       word_id = best_match["meta"]["id"].title()
-      pron_word = repr(best_match["hwi"]["prs"][0]["mw"])
+      try:  
+        pron_word = repr(best_match["hwi"]["prs"][0]["mw"])
+      except:
+        pron_word = (f"*{word_id}*")
       fl_word = best_match["fl"]
       def_word = best_match["shortdef"][0]
       def_word  = def_word[0].upper() + def_word[1:] + "."

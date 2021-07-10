@@ -30,7 +30,7 @@ async def on_message(message):
       req_dict_rep = ""
       for x in req_dict:
         if x == " ":
-          req_dict_rep += "+"
+          req_dict_rep += "-"
         else:
           req_dict_rep += x
       api_url = (f"https://dictionaryapi.com/api/v3/references/sd4/json/{req_dict_rep}?key={DICT_TOKEN}")
